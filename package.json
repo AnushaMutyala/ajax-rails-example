@@ -1,5 +1,7 @@
 {
   "name": "ajax-rails-example",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }
