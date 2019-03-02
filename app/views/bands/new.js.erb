@@ -1,4 +1,4 @@
-$('#new-band a').parent().html("<%= j render 'form', band: @band %>")
+$('#new-band a').hide().parent().append("<%= j render 'form', band: @band %>")
 
 
 
