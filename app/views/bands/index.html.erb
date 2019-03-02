@@ -16,7 +16,7 @@
         <td><%= band.name %></td>
         <td><%= link_to 'Show', band %></td>
         <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete" %></td>
+        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete_class" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,6 @@
 
 <br>
 
-<%= link_to 'New Band', new_band_path %>
+<div id="new-band">
+<%= link_to 'New Band', new_band_path, remote: true %>
+</div>
