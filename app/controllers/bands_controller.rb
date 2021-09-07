@@ -5,16 +5,25 @@ class BandsController < ApplicationController
   # GET /bands.json
   def index
     @bands = Band.all
+    @band = Band.new
   end
 
   # GET /bands/1
   # GET /bands/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /bands/new
   def new
     @band = Band.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /bands/1/edit
@@ -28,7 +37,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
-        format.js
+        format.js {redirect_to bands_url, notice: 'Band was successfully created.' }
         format.html { redirect_to @band, notice: 'Band was successfully created.' }
         format.json { render :show, status: :created, location: @band }
       else
@@ -43,7 +52,8 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
-        format.html { redirect_to @band, notice: 'Band was successfully updated.' }
+        
+        format.html { redirect_to bands_url, notice: 'Band was successfully updated.' }
         format.json { render :show, status: :ok, location: @band }
       else
         format.html { render :edit }
@@ -57,7 +67,7 @@ class BandsController < ApplicationController
   def destroy
     @band.destroy
     respond_to do |format|
-      format.js
+      
       format.html { redirect_to bands_url, notice: 'Band was successfully destroyed.' }
       format.json { head :no_content }
     end

@@ -1,6 +1,14 @@
 <tr>
-  <td><%= band.name %></td>
-  <td><%= link_to 'Show', band %></td>
-  <td><%= link_to 'Edit', edit_band_path(band) %></td>
-  <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete_class" %></td>
+  <td class="col-md-2"><%= band.name %></td>
+  	<td>
+  	<div  class="col-md-1">
+		<%= link_to 'Edit', edit_band_path(band),{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-bandModal', class: 'btn btn-warning'}%><br>
+	</div>	
+	<div class="col-md-1">
+		<%= link_to 'Show', band ,{:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#show-bandModal', class: 'btn btn-primary'}%><br>
+	</div>	
+	<div class="col-md-1">
+  		<%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "delete_class",class: "btn btn-danger" %>
+  	</div></td> 
+	
 </tr>

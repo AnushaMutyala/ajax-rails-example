@@ -11,12 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="modal-footer">    
+    
+              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+       
+    <%= form.submit class: "btn btn-success btn-lg"%>
   </div>
 <% end %>

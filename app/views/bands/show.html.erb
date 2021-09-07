@@ -4,6 +4,7 @@
   <strong>Name:</strong>
   <%= @band.name %>
 </p>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
+<div id ='edit-band'>
+<%= link_to 'Edit', edit_band_path(@band),remote:true %> 
+</div>|
 <%= link_to 'Back', bands_path %>
